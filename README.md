@@ -27,11 +27,13 @@ While the wrapper itself at the moment does not provide much, it is a good start
 ## Usage
 
 `./btools -h`
+```
 options:
     -h, --help            show this help message and exit
     -v, --version         The version of spigot to build
     --output-dir OUTPUT_DIR, -o OUTPUT_DIR 
                             The directory to output the jar to
+```
 
 ## Adding to PATH
 `cd`
