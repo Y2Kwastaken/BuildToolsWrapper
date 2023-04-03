@@ -1,0 +1,7 @@
+#!/usr/bin/env python
+
+import BuildTools
+
+if __name__ == '__main__':
+    BuildTools.main()
+    
