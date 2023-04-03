@@ -4,7 +4,6 @@ import argparse
 from tqdm import tqdm
 import shutil
 import os
-import sys
 
 LATEST = "1.19.3"
 BUILD_TOOLS_NAME = "BuildTools.jar"
@@ -112,7 +111,6 @@ def main():
     if args.remapped:
         run_args.append("--remapped")
 
-
     if not is_cached(BUILD_TOOLS_NAME):
         download_build_tools()
 
@@ -126,4 +124,5 @@ def main():
                 args.output_dir + "/spigot-" + args.version + ".jar")
 
 
-main()
+if __name__ == "__main__":
+    main()
