@@ -100,6 +100,11 @@ def main():
         action='store',
         help="The directory to output the server jar to"
     )
+    parser.add_argument(
+        '--ignore-cache',
+        action='store_true',
+        help='Ignores the cache and downloads and runs BuildTools for the specified version anyways'
+    )
 
     args = parser.parse_args()
     run_args = ['--rev', args.version]
@@ -117,7 +122,7 @@ def main():
     # absolute path
     print(os.path.abspath(args.output_dir))
 
-    if not is_cached("spigot-" + args.version + ".jar"):
+    if not is_cached("spigot-" + args.version + ".jar") or args.ignore_cache:
         run_build_tools(["--rev", args.version])
 
     shutil.copy(CACHE_PATH + "/spigot-" + args.version + ".jar",
